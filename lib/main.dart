@@ -2,6 +2,7 @@ import 'package:buoi1/pages/trang1.dart';
 import 'package:buoi1/pages/trang2.dart';
 import 'package:buoi1/pages/trang3.dart';
 import 'package:buoi1/pages/trang4.dart';
+import 'package:buoi1/pages/trang5.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       Trang2.name : (context) => const Trang2(),
       Trang3.name :(context) => const Trang3(),
       Trang4.name :(context) => const Trang4(),
+      Trang5.name :(context) => const Trang5(),
 
     },
      
