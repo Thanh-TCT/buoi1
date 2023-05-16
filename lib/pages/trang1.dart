@@ -16,65 +16,24 @@ class _Trang1State extends State<Trang1> {
   Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.arrow_forward),
+          child: const Icon(Icons.arrow_right_sharp),
           onPressed: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const Trang2()));
+          
           },
         ),
-        body: Center(
-          child: Row(
+        body: Row(
+        
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Expanded(
-                child: Container(
-                  color: Colors.blue,
-                ),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.blue,
-                ),
-              ),
-              SizedBox(width: 10),
-              Expanded(
-                child: Container(
-                  color: Colors.blue,
-                ),
-              ),
-              SizedBox(width: 10),
-              Expanded(
-                child: Container(
-                  color: Colors.blue,
-                ),
-              ),
-            ],
-          ),
+            children: 
+            List.generate(4, (index) => Expanded(child: Container(
+              margin: EdgeInsets.only( left: index !=0 ? 10:0 ),
+              color: Colors.blue[200],
+            ),
+            )),
+          
         ));
-    Stack(
-      children: [
-        ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, Trang2.name);
-          },
-          child: Container(),
-        ),
-        ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Container(),
-        ),
-        ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamedAndRemoveUntil(
-                  context, Trang2.name, (route) => false);
-            },
-            child: Container()),
-      ],
-    );
+   
   }
 }
