@@ -50,7 +50,7 @@ class _Trang4State extends State<Trang4> {
           Container(
             width: double.infinity,
             height: 600,
-            color: Colors.blue,
+            color: Colors.blue[200],
           ),
           SizedBox(height: 10,width: 10,),
           Row(
@@ -59,12 +59,12 @@ class _Trang4State extends State<Trang4> {
               Container(
                 width: 190,
                 height: 170,
-                color: Colors.blue,
+                color: Colors.blue[200],
               ),
               Container(
                 width: 190,
                 height: 170,
-                color: Colors.blue,
+                color: Colors.blue[200],
               ),
             ],
           ),
