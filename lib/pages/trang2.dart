@@ -18,75 +18,52 @@ class _Trang2State extends State<Trang2> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      floatingActionButton: FloatingActionButton(
-        child :const Icon(Icons.arrow_right_alt),
+      floatingActionButton: Wrap(
+        spacing: 230,
+        direction: Axis.horizontal,
+        children: [
+          Container(
+            margin: const EdgeInsets.all(10),
+      child: FloatingActionButton(
+        heroTag: 'a1',
+        
+        child :const Icon(Icons.arrow_left_sharp),
+        onPressed: (){
+          Navigator.push(context, 
+          MaterialPageRoute(builder: (context) => const Trang1()));
+        },
+      ),
+          ),
+      Container(
+        margin: const EdgeInsets.all(10),
+      child: FloatingActionButton(
+        heroTag: 'a2',
+        child :const Icon(Icons.arrow_right_sharp),
         onPressed: (){
           Navigator.push(context, 
           MaterialPageRoute(builder: (context) => const Trang3()));
         },
       ),
+        
+      )
+        ]
+    ),
+      
+      
+    
+    
+    
       body : Column(
         
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SizedBox(height: 120,
-            child: Expanded(
-              child: Container(
-                  color : Colors.blue,
-                ),
-            ),
-          ),
-          SizedBox(height: 120,
-            child: Expanded(child:
-              Container(
-                color : Colors.blue,
-              ),),
-          ),
-            SizedBox(height: 120,
-              child: Expanded(child: 
-              Container (
-                color : Colors.blue,
-              ),),
-            ),
-            SizedBox(height: 120,
-              child: Expanded(child: 
-              Container(
-                color : Colors.blue,
-              ),),
-            ),
-            SizedBox(height: 120,
-              child: Expanded(child: 
-              Container(
-                color : Colors.blue,
-              ),),
-            ),
-            SizedBox(height: 120,
-              child: Expanded(child: 
-              Container(
-                color : Colors.blue,
-              ),),
-            ),
-         
-
-            
-
-            
-
-            
-
-        ],
+        children: 
+        List.generate(6, (index) => Expanded(child: Container(
+          margin: EdgeInsets.only(top: index !=0 ? 10 :0),
+          color: Colors.blue[200],
+        )))
       ),
       
       );
-    Stack(
-      children: [
-        ElevatedButton (
-          child : Container (),
-          onPressed: (){
-            Navigator.pushNamed(context, Trang1.name);
-          },
-        ),   
-      ],
-    );
+   
   }
 }
